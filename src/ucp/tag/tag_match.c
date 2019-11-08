@@ -163,6 +163,7 @@ void ucp_tag_frag_list_process_queue(ucp_tag_match_t *tm, ucp_request_t *req,
         if (status != UCS_INPROGRESS) {
             kh_del(ucp_tag_frag_hash, &tm->frag_hash, iter);
         }
+        return;
     }
 
     /* request not completed, put it on the hash */
